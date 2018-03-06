@@ -1,4 +1,4 @@
-import java.time.LocalDate;
+import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -22,6 +22,10 @@ public class Main {
         //Initialize a LocalDateTime object to your birthdate and the time 12:35 PM.
        LocalDateTime birthday = LocalDateTime.of(1999,07,10,12,35);
         System.out.println("my birthday is: " + birthday);
+
+        //Output the day of the week (Sunday-Saturday) that you were born.
+        DayOfWeek dayIwasBorn = birthday.getDayOfWeek();
+        System.out.println("the day I was born was "+ dayIwasBorn);
 
 
 
