@@ -1,6 +1,8 @@
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.Temporal;
 
 public class Main {
 
@@ -26,6 +28,10 @@ public class Main {
         //Output the day of the week (Sunday-Saturday) that you were born.
         DayOfWeek dayIwasBorn = birthday.getDayOfWeek();
         System.out.println("the day I was born was "+ dayIwasBorn);
+
+        //Output the number of days you've been alive.
+       int daysIveBeenAlive = (int) ChronoUnit.DAYS.between(birthday,today);
+        System.out.println("I've been alive for "+ daysIveBeenAlive + " days");
 
 
 
