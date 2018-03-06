@@ -12,8 +12,9 @@ public class Main {
 
         //Output tomorrow's date using a formatter.
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy-MM-dd HH:mm:ss");
-        String formatDateTime = today.format(formatter);
-        System.out.println("formatted dateTime is " +formatDateTime);
+        String formatDateTime = today.plusDays(1).format(formatter);
+        System.out.println("formatted tomorrows date is " +formatDateTime);
+
 
 
     }
