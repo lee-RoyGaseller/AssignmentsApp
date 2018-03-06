@@ -1,4 +1,5 @@
 import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -30,13 +31,21 @@ public class Main {
         System.out.println("the day I was born was "+ dayIwasBorn);
 
         //Output the number of days you've been alive.
-       int daysIveBeenAlive = (int) ChronoUnit.DAYS.between(birthday,today);
+        int daysIveBeenAlive = (int) ChronoUnit.DAYS.between(birthday,today);
         System.out.println("I've been alive for "+ daysIveBeenAlive + " days");
+
+        //Output the number of days between two dates.
+        long daysBetween = daysBetweenTwoDates(birthday,today);
+        System.out.println("daysBetween method test: " + daysBetween + " days");
 
 
 
     }
 
+    private static long daysBetweenTwoDates(LocalDateTime date1, LocalDateTime date2) {
+        long daysBetween = ChronoUnit.DAYS.between(date1,date2);
+        return daysBetween;
+    }
 
 
 }
