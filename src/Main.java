@@ -38,8 +38,23 @@ public class Main {
         long daysBetween = daysBetweenTwoDates(birthday,today);
         System.out.println("daysBetween method test: " + daysBetween + " days");
 
+        //Output the number of days between two dates.
+        LocalDateTime earlierDate = earlierDate(birthday,today);
+        System.out.println("the earlier date is: "+ earlierDate);
 
 
+
+    }
+
+    private static LocalDateTime earlierDate(LocalDateTime date1, LocalDateTime date2) {
+        LocalDateTime earlierDate;
+        if(date1.isBefore(date2)) {
+            earlierDate = date1;
+        }
+        else {
+            earlierDate = date2;
+        }
+        return earlierDate;
     }
 
     private static long daysBetweenTwoDates(LocalDateTime date1, LocalDateTime date2) {
