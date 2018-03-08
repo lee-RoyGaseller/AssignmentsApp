@@ -56,7 +56,19 @@ public class Main {
         addFileDatesToList("random.txt", randomDates);
         System.out.println("list of random dates: "+ randomDates);
 
+        //Output the number of stored dates in the year [Y]
+        outPutOfDesiredYear(randomDates, 1981);
 
+
+    }
+
+    private static void outPutOfDesiredYear(ArrayList<LocalDateTime> randomDates, int year) {
+        for (int i = 0; i <randomDates.size() ; i++) {
+            if (randomDates.get(i).getYear() == year){
+                System.out.println("desired year " + randomDates.get(i));
+            }
+
+        }
     }
 
     private static ArrayList<LocalDateTime> addFileDatesToList(String fileName, ArrayList<LocalDateTime> randomDates) {
@@ -79,9 +91,9 @@ public class Main {
 
     private static void addRandomDatesToFile(String filename, int datesNum) throws FileNotFoundException {
         File file = new File(filename);
-        //if (file.exists()) {
-          //  System.out.println("Oh no, you're going to overwrite the data in the file!");
-        //}
+        if (file.exists()) {
+            System.out.println("Oh no, you're going to overwrite the data in the file!");
+        }
        LocalDateTime today = LocalDateTime.now();
         Random seconds = new Random();
         try(PrintWriter pw = new PrintWriter(file)){
