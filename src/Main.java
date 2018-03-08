@@ -2,12 +2,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.time.DayOfWeek;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.Temporal;
+import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
@@ -44,24 +44,49 @@ public class Main {
 
         //Output the number of days between two dates.
         LocalDateTime earlierDate = earlierDate(birthday, today);
-        System.out.println("the earlier date is: " + earlierDate);
+        System.out.println("the earlier date is: " + earlierDate.format(formatter));
 
         //Create a file with 100 random "month/day/year  hour:minutes" (in that format) on each line.
         addRandomDatesToFile("random.txt",100);
 
 
+
+        //Store data from the file into an ArrayList of LocalDateTime objects.
+        ArrayList<LocalDateTime> randomDates = new ArrayList<>();
+        addFileDatesToList("random.txt", randomDates);
+        System.out.println("list of random dates: "+ randomDates);
+
+
+    }
+
+    private static ArrayList<LocalDateTime> addFileDatesToList(String fileName, ArrayList<LocalDateTime> randomDates) {
+        File infile = new File(fileName);
+        if( ! infile.exists() ) {
+            System.out.println( "Oh no, you can't read from a file that doesn't exist!" );
+        } else {
+            try( Scanner scan = new Scanner( infile ) ) {
+                while( scan.hasNext() ) {
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-yyyy-dd HH:mm");
+                    LocalDateTime date = LocalDateTime.parse(scan.nextLine(),formatter);
+                    randomDates.add(date);
+                }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        return randomDates;
     }
 
     private static void addRandomDatesToFile(String filename, int datesNum) throws FileNotFoundException {
         File file = new File(filename);
-        if (file.exists()) {
-            System.out.println("Oh no, you're going to overwrite the data in the file!");
-        }
+        //if (file.exists()) {
+          //  System.out.println("Oh no, you're going to overwrite the data in the file!");
+        //}
        LocalDateTime today = LocalDateTime.now();
         Random seconds = new Random();
         try(PrintWriter pw = new PrintWriter(file)){
             for (int i = 0; i < datesNum; i++) {
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-yyyy-dd HH:mm");
                 pw.println(today.minusSeconds(seconds.nextInt()).format(formatter));
             }
         } catch (FileNotFoundException e){
