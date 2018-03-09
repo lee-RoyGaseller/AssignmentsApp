@@ -5,9 +5,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -62,8 +60,21 @@ public class Main {
         //Count the number of stored dates in the current year.
         outPutOfDesiredYear(randomDates, today.getYear());
 
+        //Count the number of duplicates.
+        Set<LocalDateTime> randomUniqueDates = new HashSet<>();
+        noDuplicates(randomDates,randomUniqueDates);
+        System.out.println("randomDatesNoDuplicates: " + randomUniqueDates);
 
 
+
+    }
+
+    private static Set<LocalDateTime> noDuplicates(ArrayList<LocalDateTime> randomDates, Set<LocalDateTime> randomUniqueDates) {
+        for (int i = 0; i <randomDates.size() ; i++) {
+            randomUniqueDates.add(randomDates.get(i));
+
+        }
+        return randomUniqueDates;
     }
 
 
