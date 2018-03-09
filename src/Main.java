@@ -94,6 +94,8 @@ public class Main {
         ArrayList<Integer> earliestTimeIndexs = new ArrayList<>();
         System.out.println("earliest time index(es): " + earliestTime(randomDates,earliestTimeIndexs));
 
+        //Output a date in the format "January 1st, 2018".
+        outPutADateFormatted(randomDates.get(0));
 
 
 
@@ -101,6 +103,27 @@ public class Main {
 
 
 
+
+
+
+    }
+
+    private static void outPutADateFormatted(LocalDateTime date) {
+       if (date.getDayOfMonth() == 1){
+           System.out.println("desired format test: " + date.getMonth() + " " + date.getDayOfMonth()+ "st, " + date.getYear());
+
+       }
+       else if (date.getDayOfMonth() == 2){
+           System.out.println("desired format test: " + date.getMonth() + " " + date.getDayOfMonth()+ "nd, " + date.getYear());
+
+       } else if (date.getDayOfMonth() == 3) {
+           System.out.println("desired format test: " + date.getMonth() + " " + date.getDayOfMonth()+ "rd, " + date.getYear());
+
+       }
+       else if(date.getDayOfMonth() >=4){
+           System.out.println("desired format test: " + date.getMonth() + " " + date.getDayOfMonth()+ "th, " + date.getYear());
+
+       }
 
 
     }
