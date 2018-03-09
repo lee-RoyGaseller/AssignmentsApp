@@ -62,19 +62,22 @@ public class Main {
 
         //Count the number of duplicates.
         Set<LocalDateTime> randomUniqueDates = new HashSet<>();
-        noDuplicates(randomDates,randomUniqueDates);
-        System.out.println("randomDatesNoDuplicates: " + randomUniqueDates);
+        System.out.println("number of Duplicates " + countNumDuplicates(randomDates,randomUniqueDates));
+
+        
+
 
 
 
     }
 
-    private static Set<LocalDateTime> noDuplicates(ArrayList<LocalDateTime> randomDates, Set<LocalDateTime> randomUniqueDates) {
+    private static int countNumDuplicates(ArrayList<LocalDateTime> randomDates, Set<LocalDateTime> randomUniqueDates) {
         for (int i = 0; i <randomDates.size() ; i++) {
             randomUniqueDates.add(randomDates.get(i));
 
         }
-        return randomUniqueDates;
+        int dif = randomDates.size() - randomUniqueDates.size();
+        return dif;
     }
 
 
