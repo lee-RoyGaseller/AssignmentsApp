@@ -59,8 +59,12 @@ public class Main {
         //Output the number of stored dates in the year [Y]
         outPutOfDesiredYear(randomDates, 1981);
 
+        //Count the number of stored dates in the current year.
+        outPutOfDesiredYear(randomDates, today.getYear());
+
 
     }
+
 
     private static void outPutOfDesiredYear(ArrayList<LocalDateTime> randomDates, int year) {
         for (int i = 0; i <randomDates.size() ; i++) {
