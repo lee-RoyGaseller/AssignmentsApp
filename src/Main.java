@@ -83,11 +83,27 @@ public class Main {
         ArrayList<Integer>numOfDatesInMonthArrayList = new ArrayList<>();
         System.out.println("dates in each month: " +numOfDatesInMonth(randomDates,months,numOfDatesInMonthArrayList));
 
+        //Count the number of dates in each of the individual 12 months using a Java Map.
+        System.out.println("dates in each month with map:"+ numOfDatesInMonthWithMap(randomDates,numOfDatesInMonthArrayList));
+
+
+        //Determine the index of the latest LocalDateTime.
 
 
 
 
 
+
+
+
+    }
+
+    private static Map<Integer, Integer> numOfDatesInMonthWithMap(ArrayList<LocalDateTime> randomDates, ArrayList<Integer> numOfDatesInMonthArrayList) {
+        Map<Integer,Integer> numOfDatesInMonthMap = new HashMap<>();
+        for (int i = 0; i <numOfDatesInMonthArrayList.size() ; i++) {
+            numOfDatesInMonthMap.put(i+1,numOfDatesInMonthArrayList.get(i));
+        }
+        return numOfDatesInMonthMap;
     }
 
     private static ArrayList<Integer> numOfDatesInMonth(ArrayList<LocalDateTime> randomDates, ArrayList<Integer> months, ArrayList<Integer> numOfDatesInMonthArrayList) {
