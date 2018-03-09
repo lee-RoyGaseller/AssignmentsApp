@@ -72,11 +72,24 @@ public class Main {
         //Count the number of duplicates in a sorted list without using a Java Set.
         System.out.println("num of dupes without using a set: "+ countNumDuplicatesWithoutSet(randomDates));
 
+        //Count the number of evening (after 6pm) dates.
+        System.out.println("evening dates: "+ numOfDatesAfterSpecifiedHour(randomDates,06));
 
 
 
 
 
+
+    }
+
+    private static int numOfDatesAfterSpecifiedHour(ArrayList<LocalDateTime> randomDates, int time) {
+        int datesAfterYourTime = 0;
+        for (int i = 0; i <randomDates.size() ; i++) {
+            if(randomDates.get(i).getHour() >= time){
+                datesAfterYourTime++;
+            }
+        }
+        return datesAfterYourTime;
     }
 
     private static int countNumDuplicatesWithoutSet(ArrayList<LocalDateTime> randomDates) {
