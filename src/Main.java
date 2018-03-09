@@ -64,11 +64,23 @@ public class Main {
         Set<LocalDateTime> randomUniqueDates = new HashSet<>();
         System.out.println("number of Duplicates " + countNumDuplicates(randomDates,randomUniqueDates));
 
-        
+        //Sort the dates in chronological order.
+        ArrayList<LocalDateTime> sortedDates = new ArrayList<>();
+        randomDatesInOrder(randomDates,sortedDates);
+        System.out.println("sorted dates: "+ sortedDates);
 
 
 
 
+
+
+    }
+
+    private static void randomDatesInOrder(ArrayList<LocalDateTime> randomDates, ArrayList<LocalDateTime> sortedDates) {
+        Collections.sort(randomDates);
+        for (int i = 0; i <randomDates.size() ; i++) {
+            sortedDates.add(randomDates.get(i));
+        }
     }
 
     private static int countNumDuplicates(ArrayList<LocalDateTime> randomDates, Set<LocalDateTime> randomUniqueDates) {
