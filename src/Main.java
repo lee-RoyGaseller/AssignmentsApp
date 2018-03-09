@@ -69,11 +69,28 @@ public class Main {
         randomDatesInOrder(randomDates,sortedDates);
         System.out.println("sorted dates: "+ sortedDates);
 
+        //Count the number of duplicates in a sorted list without using a Java Set.
+        System.out.println("num of dupes without using a set: "+ countNumDuplicatesWithoutSet(randomDates));
 
 
 
 
 
+
+    }
+
+    private static int countNumDuplicatesWithoutSet(ArrayList<LocalDateTime> randomDates) {
+        int duplicates = 0;
+        for (int i = 0; i <randomDates.size() ; i++) {
+            for (int j = i+1; j <randomDates.size() ; j++) {
+                if (randomDates.get(i).isEqual(randomDates.get(j))){
+                    duplicates++;
+                }
+
+            }
+
+        }
+        return duplicates;
     }
 
     private static void randomDatesInOrder(ArrayList<LocalDateTime> randomDates, ArrayList<LocalDateTime> sortedDates) {
