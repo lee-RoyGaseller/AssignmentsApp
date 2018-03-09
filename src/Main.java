@@ -90,6 +90,9 @@ public class Main {
         //Determine the index of the latest LocalDateTime.
         latestDate(randomDates);
 
+        //Determine the indexes of the elements that have the earliest starting time, regardless of date.
+        ArrayList<Integer> earliestTimeIndexs = new ArrayList<>();
+        System.out.println("earliest time index(es): " + earliestTime(randomDates,earliestTimeIndexs));
 
 
 
@@ -98,6 +101,22 @@ public class Main {
 
 
 
+
+
+    }
+
+    private static ArrayList<Integer> earliestTime(ArrayList<LocalDateTime> randomDates, ArrayList<Integer> earliestTimeIndexes) {
+        LocalDateTime earliestDate = randomDates.get(0);
+        int earliestindex = 0;
+        for (int i = 0; i <randomDates.size() ; i++) {
+            if(randomDates.get(i).getHour()<earliestDate.getHour()){
+                earliestDate = randomDates.get(i);
+                earliestindex = i;
+            }
+
+        }
+        earliestTimeIndexes.add(earliestindex);
+        return earliestTimeIndexes;
     }
 
     private static void latestDate(ArrayList<LocalDateTime> randomDates) {
