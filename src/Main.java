@@ -88,6 +88,7 @@ public class Main {
 
 
         //Determine the index of the latest LocalDateTime.
+        latestDate(randomDates);
 
 
 
@@ -96,6 +97,23 @@ public class Main {
 
 
 
+
+    }
+
+    private static void latestDate(ArrayList<LocalDateTime> randomDates) {
+        LocalDateTime latestDate = null;
+        LocalDateTime today = LocalDateTime.now();
+        long smallestDifference = Math.abs(ChronoUnit.DAYS.between(randomDates.get(0),today));
+        for (int i = 1; i <randomDates.size() ; i++) {
+            long dif = Math.abs(ChronoUnit.DAYS.between(randomDates.get(i), today));
+            if (dif <smallestDifference){
+                smallestDifference = dif;
+                latestDate = randomDates.get(i);
+            }
+
+        }
+        System.out.println("the latest date is: " + latestDate);
+        System.out.println("Latest date difference in days: "+ smallestDifference);
     }
 
     private static Map<Integer, Integer> numOfDatesInMonthWithMap(ArrayList<LocalDateTime> randomDates, ArrayList<Integer> numOfDatesInMonthArrayList) {
