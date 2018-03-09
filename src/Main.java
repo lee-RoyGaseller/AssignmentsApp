@@ -75,11 +75,34 @@ public class Main {
         //Count the number of evening (after 6pm) dates.
         System.out.println("evening dates: "+ numOfDatesAfterSpecifiedHour(randomDates,06));
 
+        //Count the number of dates in each of the individual 12 months without using a Java Map.
+        ArrayList<Integer> months = new ArrayList<>();
+        for (int i = 1; i <=12 ; i++) {
+            months.add(i);
+        }
+        ArrayList<Integer>numOfDatesInMonthArrayList = new ArrayList<>();
+        System.out.println("dates in each month: " +numOfDatesInMonth(randomDates,months,numOfDatesInMonthArrayList));
 
 
 
 
 
+
+    }
+
+    private static ArrayList<Integer> numOfDatesInMonth(ArrayList<LocalDateTime> randomDates, ArrayList<Integer> months, ArrayList<Integer> numOfDatesInMonthArrayList) {
+        for (int i = 0; i <months.size() ; i++) {
+            int num=0;
+            for (int j = 0; j <randomDates.size() ; j++) {
+                if (randomDates.get(j).getMonthValue() ==months.get(i)){
+                    num++;
+                }
+
+            }
+            numOfDatesInMonthArrayList.add(num);
+            
+        }
+        return numOfDatesInMonthArrayList;
     }
 
     private static int numOfDatesAfterSpecifiedHour(ArrayList<LocalDateTime> randomDates, int time) {
