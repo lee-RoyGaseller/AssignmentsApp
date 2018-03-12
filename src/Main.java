@@ -9,6 +9,7 @@ import java.util.*;
 
 public class Main {
     enum Day{MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY}
+    enum Course{DATASTRUCTURES, CALCULUS, SPEECH, TENNIS, ENGLISH, FRESHMENSEMINAR}
 
     public static void main(String[] args) throws FileNotFoundException {
         System.out.println("\n\nHello, AssignmentsApp!\n");
@@ -101,30 +102,54 @@ public class Main {
         //Define and use a DayOfWeek enumerated type.
         howDoYouLikeThisDay(Day.MONDAY);
 
+        //Define and use a Course enumerated type.
+        whatDoYouThinkOfThisCourse(Course.DATASTRUCTURES);
 
+
+    }
+
+    private static void whatDoYouThinkOfThisCourse(Course course) {
+        if(course.equals(Course.DATASTRUCTURES)) {
+            System.out.println("Dr.Edwards data structures class is the best class ever!");
+        }
+        else if(course.equals(Course.SPEECH)){
+            System.out.println("Speech is okay");
+        }
+        else if(course.equals(Course.CALCULUS)){
+            System.out.println("Calculus sucks");
+        }
+        else if(course.equals(Course.TENNIS)){
+            System.out.println("Tennis is pretty cool");
+        }
+        else if(course.equals(Course.FRESHMENSEMINAR)){
+            System.out.println("Freshman seminar is forgetful");
+        }
+        else if(course.equals(Course.ENGLISH)){
+            System.out.println("English is okay");
+        }
     }
 
     private static void howDoYouLikeThisDay(Day day) {
             if(day.equals(Day.MONDAY)) {
-                System.out.println("mondays suck");
+                System.out.println("Mondays suck");
             }
             else if(day.equals(Day.TUESDAY)){
-                System.out.println("tuesday's are not the best");
+                System.out.println("Tuesday's are not the best");
             }
             else if(day.equals(Day.WEDNESDAY)){
-                System.out.println("wednesdays are okay");
+                System.out.println("Wednesdays are okay");
             }
             else if(day.equals(Day.THURSDAY)){
-                System.out.println("thursdays are pretty good");
+                System.out.println("Thursdays are pretty good");
             }
             else if(day.equals(Day.FRIDAY)){
-                System.out.println("fridays are dope");
+                System.out.println("Fridays are dope");
             }
             else if(day.equals(Day.SATURDAY)){
-                System.out.println("saturdays are the best");
+                System.out.println("Saturdays are the best");
             }
             else if(day.equals(Day.SUNDAY)){
-                System.out.println("sundays are nice");
+                System.out.println("Sundays are nice");
             }
 
     }
