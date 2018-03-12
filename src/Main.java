@@ -9,7 +9,8 @@ import java.util.*;
 
 public class Main {
     enum Day{MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY}
-    enum Course{DATASTRUCTURES, CALCULUS, SPEECH, TENNIS, ENGLISH, FRESHMENSEMINAR}
+    enum Course{DATA_STRUCTURES, CALCULUS, SPEECH, TENNIS, ENGLISH, FRESHMEN_SEMINAR}
+    enum Catagory{HOMEWORK, QUIZ, TEST, PRESENTATION,FINAL_EXAM}
 
     public static void main(String[] args) throws FileNotFoundException {
         System.out.println("\n\nHello, AssignmentsApp!\n");
@@ -100,16 +101,38 @@ public class Main {
         outPutADateFormatted(randomDates.get(0));
 
         //Define and use a DayOfWeek enumerated type.
-        howDoYouLikeThisDay(Day.MONDAY);
+        howDoYouLikeThisDay(Day.FRIDAY);
 
         //Define and use a Course enumerated type.
-        whatDoYouThinkOfThisCourse(Course.DATASTRUCTURES);
+        whatDoYouThinkOfThisCourse(Course.DATA_STRUCTURES);
+
+        //Define and use a Category enumerated type.
+        whatDoYouThinkOfThisCatagory(Catagory.HOMEWORK);
 
 
     }
 
+    private static void whatDoYouThinkOfThisCatagory(Catagory catagory) {
+        if(catagory.equals(Catagory.HOMEWORK)) {
+            System.out.println("Homework sucks");
+        }
+        else if(catagory.equals(Catagory.PRESENTATION)){
+            System.out.println("Presentations suck");
+        }
+        else if(catagory.equals(Catagory.QUIZ)){
+            System.out.println("Quiz's suck");
+        }
+        else if(catagory.equals(Catagory.TEST)){
+            System.out.println("Tests suck");
+        }
+        else if(catagory.equals(Catagory.FINAL_EXAM)){
+            System.out.println("Final Exams suck");
+        }
+
+    }
+
     private static void whatDoYouThinkOfThisCourse(Course course) {
-        if(course.equals(Course.DATASTRUCTURES)) {
+        if(course.equals(Course.DATA_STRUCTURES)) {
             System.out.println("Dr.Edwards data structures class is the best class ever!");
         }
         else if(course.equals(Course.SPEECH)){
@@ -121,7 +144,7 @@ public class Main {
         else if(course.equals(Course.TENNIS)){
             System.out.println("Tennis is pretty cool");
         }
-        else if(course.equals(Course.FRESHMENSEMINAR)){
+        else if(course.equals(Course.FRESHMEN_SEMINAR)){
             System.out.println("Freshman seminar is forgetful");
         }
         else if(course.equals(Course.ENGLISH)){
