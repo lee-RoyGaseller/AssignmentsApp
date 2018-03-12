@@ -8,6 +8,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 public class Main {
+    enum Day{MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY}
 
     public static void main(String[] args) throws FileNotFoundException {
         System.out.println("\n\nHello, AssignmentsApp!\n");
@@ -97,13 +98,15 @@ public class Main {
         //Output a date in the format "January 1st, 2018".
         outPutADateFormatted(randomDates.get(0));
 
+        //Define and use a DayOfWeek enumerated type.
+        Day favoriteDay = Day.SATURDAY;
+        Day bestWeekDay = Day.FRIDAY;
+        Day worstWeekDay = Day.MONDAY;
+        Day prettyBadWeekDay = Day.TUESDAY;
+        Day okayWeekDay = Day.WEDNESDAY;
+        Day goodWeekDay = Day.THURSDAY;
 
-
-
-
-
-
-
+        System.out.println("my favorite day is " + favoriteDay);
 
 
     }
