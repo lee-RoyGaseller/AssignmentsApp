@@ -99,17 +99,36 @@ public class Main {
         outPutADateFormatted(randomDates.get(0));
 
         //Define and use a DayOfWeek enumerated type.
-        Day favoriteDay = Day.SATURDAY;
-        Day bestWeekDay = Day.FRIDAY;
-        Day worstWeekDay = Day.MONDAY;
-        Day prettyBadWeekDay = Day.TUESDAY;
-        Day okayWeekDay = Day.WEDNESDAY;
-        Day goodWeekDay = Day.THURSDAY;
-
-        System.out.println("my favorite day is " + favoriteDay);
+        howDoYouLikeThisDay(Day.MONDAY);
 
 
     }
+
+    private static void howDoYouLikeThisDay(Day day) {
+            if(day.equals(Day.MONDAY)) {
+                System.out.println("mondays suck");
+            }
+            else if(day.equals(Day.TUESDAY)){
+                System.out.println("tuesday's are not the best");
+            }
+            else if(day.equals(Day.WEDNESDAY)){
+                System.out.println("wednesdays are okay");
+            }
+            else if(day.equals(Day.THURSDAY)){
+                System.out.println("thursdays are pretty good");
+            }
+            else if(day.equals(Day.FRIDAY)){
+                System.out.println("fridays are dope");
+            }
+            else if(day.equals(Day.SATURDAY)){
+                System.out.println("saturdays are the best");
+            }
+            else if(day.equals(Day.SUNDAY)){
+                System.out.println("sundays are nice");
+            }
+
+    }
+
 
     private static void outPutADateFormatted(LocalDateTime date) {
        if (date.getDayOfMonth() == 1){
