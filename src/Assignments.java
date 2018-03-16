@@ -19,6 +19,23 @@ public class Assignments {
     }
 
 
+    public  Assignments whichIsEarliest(Assignments assign2, Assignments assign3){
+        Assignments isEarliest = null;
+        if (this.getDueDate().isBefore(assign2.getDueDate())){
+            isEarliest = this;
+        }
+        else {
+            isEarliest = assign2;
+        }
+        if(isEarliest.getDueDate().isBefore(assign3.getDueDate())){
+
+        }
+        else {
+            isEarliest =assign3;
+        }
+        return isEarliest;
+    }
+
     public void compareTo(Object assign){
         Assignments assignment = (Assignments)assign;
         if (assignment.getDueDate().isBefore(this.getDueDate())){

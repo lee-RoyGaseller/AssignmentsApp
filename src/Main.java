@@ -126,6 +126,9 @@ public class Main {
         System.out.print("compareTo: ");
         assignment1.compareTo(assignment3);
 
+        //Which of assign1, assign2, or assign3 is the earliest?
+        System.out.println("which is earliest: " +assignment1.whichIsEarliest(assignment2,assignment3));
+
 
 
 
