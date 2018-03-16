@@ -109,6 +109,12 @@ public class Main {
         //Define and use a Category enumerated type.
         whatDoYouThinkOfThisCatagory(Catagory.HOMEWORK);
 
+        //In the driver, generate 2 random assignments named assign1 and assign2.
+        Assignments assignment1 = new Assignments(randomDates.get(0),Assignments.Course.DATASTRUCTURES,Assignments.Category.ONLINE,Assignments.Priority.HIGH);
+        Assignments assignment2 = new Assignments(randomDates.get(1),Assignments.Course.FRESHMAN_SEMINAR,Assignments.Category.PAPER,Assignments.Priority.LOW);
+
+
+
 
     }
 
