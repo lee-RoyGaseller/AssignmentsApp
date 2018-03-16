@@ -122,6 +122,10 @@ public class Main {
         //Override an Assignment.equals() method.
         System.out.println("are they equal "+ assignment1.equals(assignment3));
 
+        //Override an Assignment.compareTo() method then use it to output BEFORE, EQUALS, or AFTER based on the LocalDateTime.
+        System.out.print("compareTo: ");
+        assignment1.compareTo(assignment3);
+
 
 
 

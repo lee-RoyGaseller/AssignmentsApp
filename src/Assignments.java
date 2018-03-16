@@ -17,6 +17,20 @@ public class Assignments {
 
 
     }
+
+
+    public void compareTo(Object assign){
+        Assignments assignment = (Assignments)assign;
+        if (assignment.getDueDate().isBefore(this.getDueDate())){
+            System.out.println("BEFORE");
+        }
+        if(assignment.getDueDate().isEqual(this.getDueDate())){
+            System.out.println("EQUAL");
+        }
+        if(assignment.getDueDate().isAfter(this.getDueDate())){
+            System.out.println("AFTER");
+        }
+    }
     @Override
     public boolean equals(Object assign1) {
         Assignments assign= (Assignments)assign1;
