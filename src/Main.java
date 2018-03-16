@@ -113,6 +113,13 @@ public class Main {
         Assignments assignment1 = new Assignments(randomDates.get(0),Assignments.Course.DATASTRUCTURES,Assignments.Category.ONLINE,Assignments.Priority.HIGH);
         Assignments assignment2 = new Assignments(randomDates.get(1),Assignments.Course.FRESHMAN_SEMINAR,Assignments.Category.PAPER,Assignments.Priority.LOW);
 
+        //Copy assign1 to assign3.
+        Assignments assignment3 = new Assignments(assignment1.getDueDate(),assignment1.getCourse(),assignment1.getCategory(),assignment1.getPriority());
+
+        System.out.println("assignment 1 " + assignment1);
+        System.out.println("assignment 3 " + assignment3);
+
+
 
 
 

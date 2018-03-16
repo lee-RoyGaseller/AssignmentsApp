@@ -5,13 +5,57 @@ public class Assignments {
     public enum Category {PAPER,ONLINE}
     public enum Priority{LOW,MEDIUM,HIGH}
     private LocalDateTime dueDate;
+    private Course course;
+    private Category category;
+    private Priority priority;
 
     public Assignments(LocalDateTime dueDate, Course course, Category category, Priority priority) {
         this.dueDate = dueDate;
-        course=course;
-        category=category;
-        priority=priority;
+        this.course=course;
+        this.category=category;
+       this.priority=priority;
 
 
+    }
+
+
+    public Assignments() {
+    }
+
+    @Override
+    public String toString() {
+        return "Assignments{" + "dueDate=" + dueDate + ", course=" + course + ", category=" + category + ", priority=" + priority + '}';
+    }
+
+    public LocalDateTime getDueDate() {
+        return dueDate;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public Priority getPriority() {
+        return priority;
+    }
+
+    public void setDueDate(LocalDateTime dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public void setPriority(Priority priority) {
+        this.priority = priority;
     }
 }
