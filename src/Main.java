@@ -119,6 +119,10 @@ public class Main {
         System.out.println("assignment 1 " + assignment1);
         System.out.println("assignment 3 " + assignment3);
 
+        //Override an Assignment.equals() method.
+        System.out.println("are they equal "+ assignment1.equals(assignment3));
+
+
 
 
 

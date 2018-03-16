@@ -17,7 +17,16 @@ public class Assignments {
 
 
     }
-
+    @Override
+    public boolean equals(Object assign1) {
+        Assignments assign= (Assignments)assign1;
+        if (assign.getDueDate().equals(this.getDueDate())&& assign.getCourse().equals(this.getCourse())&& assign.getCategory().equals(this.getCategory())&& assign.getPriority().equals(this.getPriority())){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 
     public Assignments() {
     }
